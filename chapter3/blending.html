@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
+<!-- <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css" />
+<link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
+<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css" />
+<link
+  rel="stylesheet"
+  href="node_modules/reveal.js/plugin/highlight/zenburn.css"
+/> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
+  integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css"
+  integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css"
+  integrity="sha512-RoEy1xOWgzryoplQ1g0eNHizP2BRqEq8eLGpRyI6OvM2FvmxpUyiPotvW4rp/I67VN6eFq4DDXQNcFKbNZ5Rrg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/zenburn.min.css"
+  integrity="sha512-JPxjD2t82edI35nXydY/erE9jVPpqxEJ++6nYEoZEpX2TRsmp2FpZuQqZa+wBCen5U16QZOkMadGXHCfp+tUdg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<style>
+  .slides section,
+  .slides h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    width: max-content;
+  }
+
+  .reveal h1 {
+    text-transform: none;
+    border-bottom: 3pt solid #fc3d21;
+  }
+
+  .reveal h2 {
+    text-transform: none;
+  }
+
+  .image-and-caption {
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  .image-and-caption * {
+    align-self: center;
+  }
+</style>
+
+<title>Blending</title>
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+      <h1>Blending</h1>
+      <p>Real-world affects of crowding on microlensing analysis</p>
+    </section>
+
+    <section>
+        <h1>Photometry in crowded fields</h1>
+      <p>So far we have assumed that the image of the lensed source in our CCD frames is always
+      isolated and the flux from it can always be measured independently from all neighboring stars.
+
+      But we've also learned that microlensing is most often detected in crowded starfields.
+      </p>
+      <table>
+      <tr><td>
+      <img src="figures/OGLE-2012-BLG-0406_1.png" width="400" />
+      </td>
+      <td>
+      <small>The field of OGLE-2012-BLG-0406 (centered) imaged by one of LCO's 2m telescopes,
+        showing the high density of stars typical in microlensing observations.<br>
+      Y.Tsapras</small>
+      </td>
+      </tr>
+      </table>
+    </section>
+
+    <section>
+      <h1>Blended Point Spread Functions</h1>
+      <p>he light from each star is spread over a circle of pixels due to diffraction at the telescope aperture.
+        This shape of this circle is described by the star's Point Spread Function (PSF), which will have a certain
+        Full Width Half Maximum (FWHM) depending on the telescope and seeing conditions at the time. </p>
+
+      <p>If the PSFs of neighboring stars overlap, they are said to be blended. </p>
+        <table>
+        <tr><td>
+        <img src="figures/blending_schematic.png" width="1200pix" />
+        </td>
+        <td>
+        <small>
+          The light from multiple distinct stars is often blended together in our images, but only
+          the flux from one of them exhibits a lensing lightcurve when measured as a function of
+          time</br>
+        R.A. Street</small>
+        </td>
+        </tr>
+        </table>
+    </section>
+
+    <section>
+      <h1>Measured Point Spread Functions</h1>
+
+      <p>The instrument detects the light via an array of pixels, each of which subtends an angle
+        on sky (the pixel scale) which is specific to that camera and telescope. </p>
+
+    </section>
+  </div>
+</div>
+
+<!-- <script src="node_modules/reveal.js/dist/reveal.js"></script>
+<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script> -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"
+  integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"
+  integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"
+  integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    hashOneBasedIndex: true,
+
+    width: 1600,
+    height: 900,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight],
+
+    markdown: {
+      gfm: true,
+    },
+
+    slideNumber: 'c/t',
+  });
+</script>
