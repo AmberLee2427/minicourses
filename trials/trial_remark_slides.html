@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .navigate-up .controls-arrow,
+        .navigate-down .controls-arrow {
+          font-size: 20px;
+          color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+        # Intermediate Microlensing
+
+        So far we have talked about lensing by isolated objects, but arguably the most interesting
+        feature of microlensing is its sensitivity to companion objects.  In this chapter we will explore
+        <i>binary</i> microlensing, and some of the second order effects that can complicate the observations.
+
+        1. Blending
+        2. Finite Source Effects
+        3. Binary Lensing
+
+        ---
+
+        # Blending
+
+        So far we have assumed that the image of the lensed source in our CCD frames is always
+        isolated and the flux from it can always be measured independently from all neighboring stars.
+
+        But we've also learned that microlensing is most often detected in crowded starfields.
+
+        <table>
+        <tr><td>
+        <img src="figures/OGLE-2012-BLG-0406_1.png" width="400" height="400" />
+        </td>
+        <td>
+        The field of OGLE-2012-BLG-0406 (centered) imaged by one of LCO's 2m telescopes, showing the high density of stars typical in microlensing observations.
+        Y.Tsapras
+        </td>
+        </tr>
+        </table>
+
+        ---
+
+        # Blended Point Spread Functions
+
+        <p>The light from each star is spread over a circle of pixels due to diffraction at the telescope aperture.
+        This shape of this circle is described by the star's Point Spread Function (PSF), which will have a certain
+        Full Width Half Maximum (FWHM) depending on the telescope and seeing conditions at the time. </p>
+
+        <p>If the PSFs of neighboring stars overlap, they are said to be blended. </p>
+        <table>
+        <tr><td>
+        <img src="figures/blending_schematic.png" width="400" />
+        </td>
+        <td>
+        The light from multiple distinct stars is often blended together in our images, but only the flux from one of them exhibits a lensing lightcurve when measured as a function of time
+        R.A. Street
+        </td>
+        </tr>
+        </table>
+
+        ---
+
+        # Measured Point Spread Functions
+
+        <p>The instrument detects the light via an array of pixels, each of which subtends an angle
+        on sky (the pixel scale) which is specific to that camera and telescope. </p>
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

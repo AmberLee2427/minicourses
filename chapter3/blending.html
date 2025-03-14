@@ -11,6 +11,7 @@
   rel="stylesheet"
   href="node_modules/reveal.js/plugin/highlight/zenburn.css"
 /> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
@@ -64,40 +65,113 @@
   .image-and-caption * {
     align-self: center;
   }
-</style>
 
+  .image-bottom-caption {
+    display: grid;
+    grid-template-rows: max-content auto;
+  }
+</style>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <title>Blending</title>
 <div class="reveal">
   <div class="slides">
 
     <section>
       <h1>Blending</h1>
-      <p>Real-world affects of crowding on microlensing analysis</p>
+      <p>The real-world affects of crowding on microlensing analysis</p>
     </section>
 
     <section>
-        <h1>Photometry in crowded fields</h1>
-      <p>So far we have assumed that the image of the lensed source in our CCD frames is always
-      isolated and the flux from it can always be measured independently from all neighboring stars.
+      <h1>Photometry in crowded fields</h1>
+      <div class="image-and-caption">
+          <img
+            src="figures/OGLE-2012-BLG-0406_1.png"
+            alt="Crowded starfield containing a microlensing event"
+            width="824"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              <p>So far we have assumed that the image of the lensed source is always
+              isolated and the flux from it can always be measured independently from all neighboring stars.</p>
+              <p>But microlensing is most often detected in crowded starfields.</p>
+              <br>
+              <p><small>The field of OGLE-2012-BLG-0406 (centered)<br>
+              <em>Y.Tsapras</em></small></p>
+            </textarea>
+          </div>
+        </div>
+    </section>
 
-      But we've also learned that microlensing is most often detected in crowded starfields.
-      </p>
-      <table>
-      <tr><td>
-      <img src="figures/OGLE-2012-BLG-0406_1.png" width="400" />
-      </td>
-      <td>
-      <small>The field of OGLE-2012-BLG-0406 (centered) imaged by one of LCO's 2m telescopes,
-        showing the high density of stars typical in microlensing observations.<br>
-      Y.Tsapras</small>
-      </td>
-      </tr>
-      </table>
+    <section>
+      <h1>Point Spread Functions (PSF)</h1>
+      <p>Light from a single star, passing through a telescope's aperture and optics, forms an Airy disk at the detector. </p>
+      <p>The instrument detects the light via an array of discrete pixels, each of which subtends an angle
+        on sky (the pixel scale) which is specific to that camera and telescope. </p>
+
+      <div class="row">
+        <div class="image-bottom-caption">
+          <img
+              src="figures/airy_disk.png"
+              alt="Airy disk of star"
+              width="200"
+            />
+          <div data-markdown>
+              <textarea data-template>
+                <p><small>Airy disk of a single star<br>
+                <em>R.A.Street</em></small></p>
+              </textarea>
+            </div>
+        </div>
+
+        <div class="image-bottom-caption">
+          <img
+              src="figures/pixel_airy_disk.png"
+              alt="Pixelized Airy disk of star"
+              width="200"
+            />
+          <div data-markdown>
+              <textarea data-template>
+                <p><small>Airy disk as seen by the detector<br>
+                <em>R.A.Street</em></small></p>
+              </textarea>
+            </div>
+        </div>
+
+
+        <div class="image-bottom-caption">
+          <img
+              src="figures/gaussian_psf.png"
+              alt="Gaussian stellar PSF"
+              width="200"
+            />
+          <div data-markdown>
+              <textarea data-template>
+                <p><small>PSF of a single star seen through the atmosphere<br>
+                <em>R.A.Street</em></small></p>
+              </textarea>
+            </div>
+        </div>
+
+        <div class="image-bottom-caption">
+          <img
+              src="figures/pixel_gaussian_psf.png"
+              alt="Pixelized Gaussian stellar PSF"
+              width="200"
+            />
+          <div data-markdown>
+              <textarea data-template>
+                <p><small>Gaussian PSF as seen by the detector<br>
+                <em>R.A.Street</em></small></p>
+              </textarea>
+            </div>
+        </div>
+      </div>
+
     </section>
 
     <section>
       <h1>Blended Point Spread Functions</h1>
-      <p>he light from each star is spread over a circle of pixels due to diffraction at the telescope aperture.
+      <p>The light from each star is spread over a circle of pixels due to diffraction at the telescope aperture.
         This shape of this circle is described by the star's Point Spread Function (PSF), which will have a certain
         Full Width Half Maximum (FWHM) depending on the telescope and seeing conditions at the time. </p>
 
