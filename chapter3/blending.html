@@ -48,6 +48,12 @@
     width: max-content;
   }
 
+  .slides h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    width: max-content;
+  }
+
   .reveal h1 {
     text-transform: none;
     border-bottom: 3pt solid #fc3d21;
@@ -55,6 +61,7 @@
 
   .reveal h2 {
     text-transform: none;
+    border-bottom: 3pt solid #fc3d21;
   }
 
   .image-and-caption {
@@ -70,6 +77,11 @@
     display: grid;
     grid-template-rows: max-content auto;
   }
+
+  .body-text {
+    font-size: 28px;
+  }
+
 </style>
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <title>Blending</title>
@@ -79,6 +91,8 @@
     <section>
       <h1>Blending</h1>
       <p>The real-world affects of crowding on microlensing analysis</p>
+      <p>Authors: R.A. Street</p>
+      <p>Contributors: Y. Tsapras</p>
     </section>
 
     <section>
@@ -96,7 +110,6 @@
               <p>But microlensing is most often detected in crowded starfields.</p>
               <br>
               <p><small>The field of OGLE-2012-BLG-0406 (centered)<br>
-              <em>Y.Tsapras</em></small></p>
             </textarea>
           </div>
         </div>
@@ -104,66 +117,13 @@
 
     <section>
       <h1>Point Spread Functions (PSF)</h1>
-      <p>Light from a single star, passing through a telescope's aperture and optics, forms an Airy disk at the detector. </p>
-      <p>The instrument detects the light via an array of discrete pixels, each of which subtends an angle
-        on sky (the pixel scale) which is specific to that camera and telescope. </p>
-
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="image-bottom-caption">
           <img
-              src="figures/airy_disk.png"
-              alt="Airy disk of star"
-              width="200"
+              src="figures/single_star_psf.png"
+              alt="PSF of an isolated star"
+              width="95%"
             />
-          <div data-markdown>
-              <textarea data-template>
-                <p><small>Airy disk of a single star<br>
-                <em>R.A.Street</em></small></p>
-              </textarea>
-            </div>
-        </div>
-
-        <div class="image-bottom-caption">
-          <img
-              src="figures/pixel_airy_disk.png"
-              alt="Pixelized Airy disk of star"
-              width="200"
-            />
-          <div data-markdown>
-              <textarea data-template>
-                <p><small>Airy disk as seen by the detector<br>
-                <em>R.A.Street</em></small></p>
-              </textarea>
-            </div>
-        </div>
-
-
-        <div class="image-bottom-caption">
-          <img
-              src="figures/gaussian_psf.png"
-              alt="Gaussian stellar PSF"
-              width="200"
-            />
-          <div data-markdown>
-              <textarea data-template>
-                <p><small>PSF of a single star seen through the atmosphere<br>
-                <em>R.A.Street</em></small></p>
-              </textarea>
-            </div>
-        </div>
-
-        <div class="image-bottom-caption">
-          <img
-              src="figures/pixel_gaussian_psf.png"
-              alt="Pixelized Gaussian stellar PSF"
-              width="200"
-            />
-          <div data-markdown>
-              <textarea data-template>
-                <p><small>Gaussian PSF as seen by the detector<br>
-                <em>R.A.Street</em></small></p>
-              </textarea>
-            </div>
         </div>
       </div>
 
@@ -171,33 +131,60 @@
 
     <section>
       <h1>Blended Point Spread Functions</h1>
-      <p>The light from each star is spread over a circle of pixels due to diffraction at the telescope aperture.
-        This shape of this circle is described by the star's Point Spread Function (PSF), which will have a certain
-        Full Width Half Maximum (FWHM) depending on the telescope and seeing conditions at the time. </p>
-
-      <p>If the PSFs of neighboring stars overlap, they are said to be blended. </p>
-        <table>
-        <tr><td>
-        <img src="figures/blending_schematic.png" width="1200pix" />
-        </td>
-        <td>
-        <small>
-          The light from multiple distinct stars is often blended together in our images, but only
-          the flux from one of them exhibits a lensing lightcurve when measured as a function of
-          time</br>
-        R.A. Street</small>
-        </td>
-        </tr>
-        </table>
+      <div class="row justify-content-center">
+        <div class="image-bottom-caption">
+          <img
+              src="figures/blended_star_psf.png"
+              alt="PSFs of blended stars"
+              width="95%"
+            />
+        </div>
+      </div>
     </section>
 
     <section>
-      <h1>Measured Point Spread Functions</h1>
-
-      <p>The instrument detects the light via an array of pixels, each of which subtends an angle
-        on sky (the pixel scale) which is specific to that camera and telescope. </p>
-
+      <h1>Measuring Flux</h1>
+      <p>Blending results in light from the neighbors contaminating the flux of the
+        lensed star, f<sub>s</sub>, measured at time t. </p>
+      <div class="row">
+        <div class="col-sm">
+          For an isolated lensed star, the measured flux f(t) is given by:</p>
+$$f(t) = f_{s}(t)A(u(t))$$
+        </div>
+        <div class="col-sm">
+          In practise what we actually measure is:</p>
+$$f(t) = f_{s}(t)A(u(t)) + f_{b}$$
+        </div>
+      </div>
+<p class="body-text">where A(u(t)) is the magnification at angular separation u, and
+  f<sub>b</sub>(t) is the additional flux from all overlapping neighbors. </p>
+      <p>This is strongly time-dependant: for instance, if the seeing suddenly worsens
+        during observations, the stellar PSFs expand radially and f<sub>b</sub> abruptly increases.</p>
     </section>
+
+    <section>
+
+      <h2>Blending in microlensing lightcurves</h2>
+      <p>Blended flux can "dilute" the measured amplitude, and make t<sub>E</sub>
+        appear shorter, leading to a mis-estimation of the lens parameters.  <p>
+      <p>As this can be a symmetrical change in the lightcurve, it can mimic the
+      affects of the parallax component &pi;<sub>E,&perp;</sub>.
+</p>
+      <div class="image-and-caption">
+          <img
+            src="figures/blending_lightcurve_schematic.png"
+            alt="Schematic microlensing lightcurve showing blending"
+            width="100%"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              <p>The solid black lightcurve shows an unblended lensing event in comparison with
+              the dotted blue lightcurve where the lensed star is blended</p>
+            </textarea>
+          </div>
+        </div>
+    </section>
+
   </div>
 </div>
 
