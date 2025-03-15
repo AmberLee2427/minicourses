@@ -153,7 +153,7 @@ $$f(t) = f_{s}(t)A(u(t))$$
         </div>
         <div class="col-sm">
           In practise what we actually measure is:</p>
-$$f(t) = f_{s}(t)A(u(t)) + f_{b}$$
+$$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
         </div>
       </div>
 <p class="body-text">where A(u(t)) is the magnification at angular separation u, and
@@ -185,6 +185,87 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}$$
         </div>
     </section>
 
+    <section>
+      <h1>Notation</h1>
+      Different authors sometimes use different formulations for blending, so you may also see
+      the <em>blend ratio, g</em>:<br>
+      $$g = f_{b}/f_{s}$$
+    </section>
+
+    <section>
+      <h1>Dealing with Blending</h1>
+    <div class="row">
+          <div class="col-sm">
+              <p>Contemporaneous sets of observations from different telescopes and
+              instruments can help here. </p>
+              <p>Each dataset has a different combination of telescope aperture, instrument
+              resolution and seeing conditions, as in these examples, so f<sub>s</sub> and
+              f<sub>b</sub> will vary independently for each dataset.  </p>
+              <p>So we consider both as functions of time for each dataset, <em>k</em> (with
+              N<sub>k</sub> datapoints), in turn:</p>
+              <p>$$f_{k}(t) = f_{s,k}(t)A(u(t)) + f_{b,k}$$</p>
+          </div>
+        </div>
+    </section>
+
+    <section>
+      <h1>Measuring the blend flux</h1>
+      <p>A(u(t)) can usually* be considered to be the same for all datasets from Earth.</p>
+      <p>We derive a starting model A(u(t)) by adopting typical initial values for the physical event parameters,
+        which we can use to calculate the measured flux, f<sub>m,k</sub>(t) (with measurement errors, σ<sub>m,k</sub>(t)).
+      We can test how well the model fits with a &chi;<sup>2</sup> test:</p>
+
+      <p>$$\chi^{2} = \frac{\sum_{i} \left( \frac{f_{m,k}(t) - f_{k}(t)}{\sigma_{m,k}(t)} \right)^{2}}{N_{k} - N_{par}}$$</p>
+
+      <p>N<sub>par</sub> is the number of fitted parameters.</p>
+      <small>* We'll come back to this later</small>
+    </section>
+
+    <section>
+    <h1>Measuring the blend flux</h1>
+      <p>Differentiating this expression with respect to each variable in turn and
+        equating it to zero, we can derive a set of simultaneous equations which can be
+        used to infer f<sub>s,k</sub>, f<sub>b,k</sub> for each dataset, for the given
+        amplification model.</p>
+      <p>Given this set of initial blending parameters, we can now repeat this process,
+        but this time fit for the physical parameters of the amplification model. By
+        iterating this process, we can arrive a set of consistent parameters.</p>
+    </section>
+
+    <section>
+      <h1>Stellar variability</h1>
+      <p>So far we have assumed that the blended neighbors to the lensed star give
+        constant flux over the duration of the lensing event.  Of
+        course, that isn't always the case, and if one or more neighboring stars has
+        intrinsic variability, f<sub>b</sub> may also vary with time and wavelength.  </p>
+
+        <p>This can be accommodated by substituting f<sub>b</sub>(t)
+          with an appropriate function, for instance a linear gradient or sinusoid.
+          Observations taken before or after the lensing event can be used to determine a
+          suitable model.</p>
+    </section>
+
+    <section>
+      <h1>Widely-spaced Observatories</h1>
+      <p>We said that we can <em>usually</em> assume that the lensing magnification,
+        A(u(t)), is the same for all observers, but this is only true if all observers share
+        the same line of sight to the event.  </p>
+      <p>If observers are widely separated (e.g. on Earth and a spacecraft), then the line of sight
+      to the event is appreciably different, and the observers will measure different
+      angular separations <em>u</em> at time <em>t</em>.  </p>
+      <p>If this is the case, then we have to take this into account when computing A(u(t)).</p>
+    </section>
+
+    <section>
+      <h1>Further reading</h1>
+      <ul>
+        <li><a href="http://adsabs.harvard.edu/abs/1997ApJ...479..119A">
+          Alcock, C. et al. (1997), ApJ, 479, 119</li></a>
+        <li><a href="http://adsabs.harvard.edu/abs/1997ApJ...487...55W">Wozniak, P & Paczy&nacute;ski,B. (1997), ApJ, 487, 55</a></li>
+        <li><a href="http://adsabs.harvard.edu/abs/1999MNRAS.309..404H">Han, C.(1999), MNRAS, 309, 373</a></li>
+        <li><a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...763...67S/abstract">Street. R.A. et al. (2013), ApJ, 763, id. 67</a></li>
+      </ul>
+    </section>
   </div>
 </div>
 
