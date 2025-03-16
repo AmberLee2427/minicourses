@@ -82,6 +82,8 @@
     font-size: 28px;
   }
 
+    .mjx-chtml{ font-size: 1.0em !important; }
+
 </style>
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <title>Blending</title>
@@ -165,22 +167,19 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <section>
 
       <h2>Blending in microlensing lightcurves</h2>
-      <p>Blended flux can "dilute" the measured amplitude, and make t<sub>E</sub>
-        appear shorter, leading to a mis-estimation of the lens parameters.  <p>
-      <p>As this can be a symmetrical change in the lightcurve, it can mimic the
-      affects of the parallax component &pi;<sub>E,&perp;</sub>.
-</p>
-      <div class="image-and-caption">
-          <img
-            src="figures/blending_lightcurve_schematic.png"
-            alt="Schematic microlensing lightcurve showing blending"
-            width="100%"
-          />
-          <div data-markdown>
-            <textarea data-template>
-              <p>The solid black lightcurve shows an unblended lensing event in comparison with
-              the dotted blue lightcurve where the lensed star is blended</p>
-            </textarea>
+      <div class="row">
+          <div class="col-sm-9">
+              <img
+                src="figures/blending_lightcurve_schematic.png"
+                alt="Schematic microlensing lightcurve showing blending"
+                width="100%"
+              />
+          </div>
+          <div class="col-sm-3">
+              <p>Blending can make t<sub>E</sub> appear shorter, leading to a
+                  mis-estimation of the lens parameters.  <p>
+              <p>It can be a symmetrical change in the lightcurve, mimicing the
+      parallax component &pi;<sub>E,&perp;</sub>.
           </div>
         </div>
     </section>
@@ -280,14 +279,25 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <section>
       <h1>Stellar variability</h1>
       <p>So far we have assumed that the blended neighbors to the lensed star give
-        constant flux over the duration of the lensing event.  Of
-        course, that isn't always the case, and if one or more neighboring stars has
-        intrinsic variability, f<sub>b</sub> may also vary with time and wavelength.  </p>
-
-        <p>This can be accommodated by substituting f<sub>b</sub>(t)
-          with an appropriate function, for instance a linear gradient or sinusoid.
-          Observations taken before or after the lensing event can be used to determine a
+        constant flux over the duration of the lensing event.  If one or more neighboring
+          stars has intrinsic variability, f<sub>b</sub> may also vary with time and
+          wavelength.  </p>
+        <div class="row">
+            <div class="col-sm">
+                <p>This can be accommodated by substituting f<sub>b</sub>(t)
+          with an appropriate function, for instance a linear gradient or sinusoid.</p>
+          <p>Observations taken before or after the lensing event can be used to determine a
           suitable model.</p>
+            </div>
+            <div class="col-sm">
+                <img
+                    src="figures/sim_variable_event_lightcurve.png"
+                    alt="Simulated event with variable baseline"
+                    width="100%"
+                  />
+            </div>
+        </div>
+
     </section>
 
     <section>
