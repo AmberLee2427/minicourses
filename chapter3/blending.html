@@ -195,9 +195,30 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <section>
       <h1>Dealing with Blending</h1>
     <div class="row">
-          <div class="col-sm">
-              <p>Contemporaneous sets of observations from different telescopes and
+        <p>Contemporaneous sets of observations from different telescopes and
               instruments can help here. </p>
+        <div class="col-sm">
+            <div class="row">
+                <div class="col-sm">
+                    <img
+                    src="figures/ob240034_cpt_sub2.png"
+                    alt="Microlensing event observed from South Africa"
+                    width="80%"
+                  />
+                </div>
+                <div class="col-sm">
+                    <img
+                    src="figures/ob240034_coj_sub2.png"
+                    alt="Microlensing event observed from Australia"
+                    width="80%"
+                  />
+                <br>
+                </div>
+            </div>
+            <small>Event OGLE-2024-BLG-0034 observed from (left) South Africa and (right) Australia
+                on 2024/10/12</small>
+          </div>
+          <div class="col-sm">
               <p>Each dataset has a different combination of telescope aperture, instrument
               resolution and seeing conditions, as in these examples, so f<sub>s</sub> and
               f<sub>b</sub> will vary independently for each dataset.  </p>
@@ -211,13 +232,26 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <section>
       <h1>Measuring the blend flux</h1>
       <p>A(u(t)) can usually* be considered to be the same for all datasets from Earth.</p>
-      <p>We derive a starting model A(u(t)) by adopting typical initial values for the physical event parameters,
-        which we can use to calculate the measured flux, f<sub>m,k</sub>(t) (with measurement errors, σ<sub>m,k</sub>(t)).
-      We can test how well the model fits with a &chi;<sup>2</sup> test:</p>
-
-      <p>$$\chi^{2} = \frac{\sum_{i} \left( \frac{f_{m,k}(t) - f_{k}(t)}{\sigma_{m,k}(t)} \right)^{2}}{N_{k} - N_{par}}$$</p>
-
-      <p>N<sub>par</sub> is the number of fitted parameters.</p>
+      <div class="row">
+          <div class="col-sm">
+              <img
+                    src="figures/sim_event_lightcurve.png"
+                    alt="Simulated event lightcurve"
+                    width="100%"
+                  />
+          </div>
+          <div class="col-sm">
+              <ol>
+                  <li>Estimate initial model parameters</li>
+                  <li>Compute A(u(t)), and model lightcurve fluxes, f<sub>m,k</sub>(t)</li>
+                  <li>Evaluate goodness of model fit:
+                  $$\chi^{2} = \frac{\sum_{i} \left( \frac{f_{m,k}(t) - f_{k}(t)}{\sigma_{k}(t)} \right)^{2}}{N_{k} - N_{par}},$$
+                      <small>where N<sub>par</sub> is the number of fitted parameters, and &sigma;<sub>k</sub> represents
+                      the uncertainties of the flux values.</small>
+                  </li>
+              </ol>
+          </div>
+      </div>
       <small>* We'll come back to this later</small>
     </section>
 
@@ -225,11 +259,22 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <h1>Measuring the blend flux</h1>
       <p>Differentiating this expression with respect to each variable in turn and
         equating it to zero, we can derive a set of simultaneous equations which can be
-        used to infer f<sub>s,k</sub>, f<sub>b,k</sub> for each dataset, for the given
-        amplification model.</p>
-      <p>Given this set of initial blending parameters, we can now repeat this process,
-        but this time fit for the physical parameters of the amplification model. By
-        iterating this process, we can arrive a set of consistent parameters.</p>
+        used to infer (f<sub>s</sub>, f<sub>b</sub>) for each dataset, for the given
+        magnification model.</p>
+        <div class="row">
+            <div class="col-sm">
+              <img
+                    src="figures/sim_event_magni_flux.png"
+                    alt="Plot of simulated flux versus lensing magnification"
+                    width="100%"
+                  />
+          </div>
+          <div class="col-sm">
+              <p>Using this set of initial blending parameters, we can now repeat this process,
+        but this time fit for the physical parameters of the amplification model. </p>
+              <p>Iterating this process, we infer a consistent set of parameters.</p>
+          </div>
+        </div>
     </section>
 
     <section>
