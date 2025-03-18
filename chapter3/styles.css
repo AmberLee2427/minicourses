@@ -3,3 +3,50 @@
   font-size: 20px;
   color: red;
 }
+
+.slides section,
+.slides h1 {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-align: left;
+width: max-content;
+}
+
+.slides h2 {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-align: left;
+width: max-content;
+}
+
+.reveal h1 {
+text-transform: none;
+border-bottom: 3pt solid #fc3d21;
+}
+
+.reveal h2 {
+text-transform: none;
+border-bottom: 3pt solid #fc3d21;
+}
+
+.image-and-caption {
+display: grid;
+grid-template-columns: max-content auto;
+}
+
+.image-and-caption * {
+align-self: center;
+}
+
+.image-bottom-caption {
+display: grid;
+grid-template-rows: max-content auto;
+}
+
+.body-text {
+font-size: 28px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.mjx-chtml{ font-size: 1.0em !important; }

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css"
+  integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css"
+  integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/white.min.css"
+  integrity="sha512-RoEy1xOWgzryoplQ1g0eNHizP2BRqEq8eLGpRyI6OvM2FvmxpUyiPotvW4rp/I67VN6eFq4DDXQNcFKbNZ5Rrg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/zenburn.min.css"
+  integrity="sha512-JPxjD2t82edI35nXydY/erE9jVPpqxEJ++6nYEoZEpX2TRsmp2FpZuQqZa+wBCen5U16QZOkMadGXHCfp+tUdg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+    rel="stylesheet",
+    href="styles.css"
+/>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<title>Finite Source Effects</title>
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+      <h1>Finite Source Effects</h1>
+      <p>The effects of the physical extend of stars on microlensing</p>
+      <p>Authors: R.A. Street</p>
+      <p>Contributors: Y. Tsapras</p>
+    </section>
+
+      <section>
+          <h1>Introduction</h1>
+          <div class="row">
+              <div class="col-sm">
+                  <p>Generally in astronomy its pretty safe to treat them as point sources given
+              their enormous distances! </p>
+                  <p>But microlensing is an extraordinarily sensitive
+              technique and even the radius of a star almost half way across the Galaxy
+              can have a measureable affect.</p>
+              </div>
+              <div class="col-sm">
+                  <img
+            src="figures/solar_disk_nasa.jpg"
+            alt="Image of the solar disk by NASA"
+            width="100%"
+          /><br>
+                  <small>Image credit: JPL/NASA Solar Dynamic Observatory</small>
+              </div>
+          </div>
+
+</p>
+      </section>
+
+      <section>
+          <h1>Lens and Source Planes</h1>
+          <div class="row">
+              <div class="col-sm-8">
+                  <img
+            src="figures/lens_source_plane_mapping.png"
+            alt="Geometry of the lens and source planes"
+            width="100%"
+          />
+              </div>
+              <div class="col-sm">
+                  <p>Lensing can be thought of as a 'mapping' of the coordinate system in the lens plane (x,y, centered on the lens) to that of
+                      the source (&xi;,&eta;). </p>
+              </div>
+          </div>
+          <p>It describes the angular offsets (&theta;<sub>1,2</sub>) of the images of the source in terms of
+the lens characteristics and the angular separation between lens and source (&alpha;).</p>
+      </section>
+
+      <section>
+          <h1>The Lens Equation (again)</h1>
+          <p>Here we introduce complex notation in order to parameterize the lens equation.</p>
+          <p>This provides a more natural formulation for two-dimensional vectors. Much of
+              this theory was originally explored in the context of lensed quasars and other large-scale masses.</p>
+          <div class="center-text">
+                  $$\zeta = \xi + i\eta$$
+                  $$z = x + iy,$$
+          </div>
+<p>where z and &zeta; are normalized to the Einstein radius in the lens, source planes respectively.</p>
+
+      </section>
+
+      <section>
+          <h1>The Lens Equation</h1>
+          <p>The equation for a single lens can then be re-written:</p>
+            <div class="center-text">
+                $$\zeta - \frac{D_{S}}{D_{L}}z - D_{LS}\alpha(z,\bar{z}) = 0,$$
+            </div>
+
+            <p>where &alpha; is the complex deflection angle &alpha;(z, z&#772;) = &alpha;<sub>x</sub>(x, y) + <em>i</em>&alpha;<sub>y</sub>(x, y) and
+            z&#772; is the complex conjugate of z.</p>
+
+            <p>The solutions of this form of the lens equation are then:</p>
+            <div class="center-text">
+            $$z_{1,2} = \frac{\xi}{2}\left( 1 \pm \sqrt{1 + \frac{4}{\zeta\zeta}} \right)$$
+            </div>
+            <p><small>See Witt 1990, Witt & Mao 1994 and Mao & Witt 1998 for a full
+            derivation of finite-source expressions.</small></p>
+      </section>
+
+      <section>
+          <h1>Sources of Finite Extent</h1>
+
+            <p>In this notation a single, circular source of finite radius r can be described as:</p>
+
+            <div class="center-text">
+                $$\zeta(\phi) = \zeta_{0} + re^{i\phi},$$
+            </div>
+
+            <p>where &phi; = &theta;-2&pi; and &zeta;<sub>0</sub> is the (parameterized) impact parameter.
+            This is simply substituted into the solutions for the lens equations to derive the parameterized image locations:</p>
+
+            <div class="center-text">
+                $$z_{1,2} = \frac{\zeta_{0}+re^{i\phi}}{2}\left[ 1 \pm \sqrt{1 + \frac{4}{\zeta_{0}^{2} + 2r\zeta_{0}\cos{\phi+r^{2}}}} \right],$$
+            </div>
+      </section>
+
+      <section>
+          <h1>Images of the Source</h1>
+          <p>The source-plane coordinate system is taken to be orientated so that &zeta;<sub>0</sub> lies along the &xi;-axis and so is real.</p>
+
+            <p>This leads to 3 catagories of images:<br>
+            If &zeta;<sub>0</sub> &le; r: 2 images merge into a ring at the Einstein radius ("perfect" alignment)<br>
+            If r < &zeta;<sub>0</sub> << 2: 2 images form arcs<br>
+            If &zeta;<sub>0</sub> &ge; 2: 2 images are increasely deformed from circular with proximity to the line of sight.<br>
+            </p>
+      </section>
+
+      <section>
+          <h2>Finite Source Size and Magnification</h2>
+
+        <p>Since surface brightness is conserved, the magnification is given by the ratio of the combined image area to that of
+        the source. In complex notation this is given by:</p>
+
+          <div class="center-text">
+            $$A_{1,2} = \frac{1}{2\pi r^{2}} \int_{0}^{2\pi} y(\phi) \frac{dx(\phi)}{d\phi},$$
+          </div>
+        <p>where</p>
+
+        <div class="center-text">
+            $$x(\phi) = \frac{\zeta_{0} + r\cos\phi}{2}f_{1,2}(\phi),
+            y(\phi) = \frac{r\sin\phi}{2}f_{1,2}(\phi),$$
+            $$f_{1,2}(\phi) = 1 \pm \sqrt{1 + \frac{4}{\zeta_{0}^{2} + r^{2} + 2\zeta_{0}r\cos\phi}}$$
+         </div>
+      </section>
+
+      <section>
+          <h2>General expressions for image magnification</h2>
+            <p>Witt & Mao 1994 derived general expressions for the image magnification
+                A<sub>1,2</sub> and total magnification (A<sub>tot</sub>).</p>
+
+            <div class="center-text">
+                $$A_{1,2} = \pm\frac{\pi}{2} + \frac{1}{2\pi}E\left(\frac{\pi}{2},k\right)\frac{\zeta_{0}+r}{2r^{2}}\sqrt{4 + (\zeta_{0} - r)^{2}}$$
+                $$-\frac{1}{2\pi}F\left(\frac{\pi}{2},k\right) \frac{\zeta_{0}-r}{r^{2}}{4+(\zeta_{0}^{2} - r^{2}/2}{\sqrt{4 + (\zeta_{0}-r)^{2}}}$$
+                $$+\frac{1}{2\pi}\Pi\left(\frac{\pi}{2},n,k\right) \frac{2(\zeta_{0}-r)^{2}}{r^{2}(\zeta_{0}+r)}\frac{1+r^{2}}{\sqrt{4+(\zeta_{0}-r)^{2}}}$$
+            </div>
+      </section>
+      <section>
+          <h2>General expressions for image magnification</h2>
+            <p>where E,F and &Pi; are the first, second and third elliptic integrals defined by Gradshteyn & Ryzhik (1980) and</p>
+
+            <div class="cneter-text">
+                $$n = \frac{4\zeta_{0}r}{(\zeta_{0}+r)^{2}},$$
+                $$k = \sqrt{\frac{4n}{4+(\zeta_{0}-r)^{2}}}$$
+            </div>
+      </section>
+      <section>
+          <h2>Small sources</h2>
+          <p>However, in the case where the source can be considered to be small (r &rarr; 0) but the alignment is not perfect
+             (&zeta;<sub>0</sub>  &ne; 0), we recover the familiar amplification equation for a point source by summing the contributions from
+             A<sub>1,2</sub>:</p>
+
+            <div class="center-text">
+                $$A_{tot} = \frac{2+\zeta_{0}^{2}}{\zeta_{0}\sqrt{4+\zeta_{0}^{2}}}.$$
+            </div>
+      </section>
+      <section>
+          <h1>Observable Effects</h1>
+          <p>The observable effects of the finite extent of the source are illustrated in Fig. 10. The lightcurve is noticably "rounded-over"
+         at the peak of the event in comparison with the PSPL model, and the amplitude can differ significantly. In practise this prevents
+         real events from achieving the (theoretical) infinite amplification. These effects become significant when &alpha; &asymp; &theta;<sub>0</sub>.
+         This can be a problem while an event is in progress, since any deviation from the PSPL lightcurve has to be regarded as a
+         potential planetary anomaly (ie. a binary lens). As a result, a certain amount of time is spent observing apparently anomalous
+         events which later turn out to be due to single-object-lens.</p>
+
+      </section>
+      <section>
+          <img
+            src="figures/finite_source_lightcurves.png"
+            alt="Lightcurve with finite source effects"
+            width="100%"
+          />
+      </section>
+
+      <section>
+          <h1>Limb-darkened Finite Sources</h1>
+          <p>The advantage of expressing the lens and amplification equations this way is that it makes it relatively straightforward to
+         introduce one last consideration for a finite source – limb darkening. While the surface brightness of the source is conserved
+         during a microlensing event, most stars don't have a constant brightness profile over the disk.</p>
+
+      </section>
+
+      <section>
+          <h1>Limb darkening laws</h1>
+          <p>A number of well-established wavelength-dependent limb darkening relationships are available. The higher-order equations
+             generally offer greater accuracy but are not always convenient to use. Published tables present the co-efficients for each
+             relationship as established from observations, allowing us to look-up the appropriate coefficients for the passband of our
+             observations. See papers by Claret et al. These coefficients have historically been denoted by u<sub>&lambda;,1,2</sub>,
+             somewhat confusingly in the microlensing context!
+            </p>
+          <p>Mao & Witt (1998) implemented the limb-darkening law:</p>
+
+          <div class="center-text">
+            $$\frac{I_{\lambda}(r)}{I_{\lambda}(0)} = 1 - u_{\lambda,1} - u_{\lambda,2} + u_{\lambda,1}\sqrt{1 - \frac{R_{S}^{2}}{r^{2}}} + u_{\lambda,2}\left(1 - \frac{R_{S}^{2}}{r^{2}}\right),$$
+          </div>
+
+         <p>where I<sub>&lambda;</sub>(r) and I<sub>&lambda;</sub>(0) are the intensity of the stellar disk out to radii of r and at the
+        center, respectively.</p>
+      </section>
+
+      <section>
+          <h2>Finite source effects with limb darkening</h2>
+          <p>To find an expression for the amplification taking this into account, we break the disk of the star down into infinesimally
+        thin 'shell' layers of radial thickness dr.</p>
+
+         <p>Remembering that the amplification A(r) is the ratio of the image area to that of the unlensed source, we can represent the
+         image area of a lensed source of radius r as:</p>
+
+          <div class="center-text">
+            $${\rm Area}_{\rm image}(r) = A(r)\pi r^{2},$$
+          </div>
+
+            <p>It follows then that for a source of slightly larger radius r+dr, this area is:</p>
+
+          <div class="center-text">
+            $${\rm Area}_{\rm image}(r+dr) = A(r+dr)\pi (r+dr)^{2},$$
+          </div>
+          <p>The image area of the shell, Area<sub>image</sub>(dr), alone is then the difference between these two. The contribution of that
+             shell to the amplification, A<sub>shell</sub>, is given, as always, by the ratio of the shell image area Area<sub>shell</sub>(dr)
+             and the unlensed area of the shell, 2&pi;rdr:
+            </p>
+
+          <div class="center-text">
+              $$A_{\rm shell} = \frac{Area_{\rm image}(r+dr) - Area_{\rm image}(r)}{2 \pi r dr},$$
+              $$A_{\rm shall} = \frac{1}{2\pi r}{d}{dr}(\pi r^{2}A).$$
+          </div>
+      </section>
+
+      <section>
+          <h2>Finite source effects with limb darkening</h2>
+          <p>For each shell at radius r, the product of the area of shell's image and the intensity of the stellar disk at that radius,
+         I(r) give the flux from the shell's image. We then extract the total flux from the images during lensing by integrating over the
+         full radius of the source. The amplification A<sub>limb</sub> is then the ratio of this quantity to the integral of I(r)&times;area
+         over the unlensed disk:</p>
+
+          <div class="center-text">
+              $$A_{\rm limb} = \frac{\int_{0}^{R_{S}} A_{\rm shell}I(r)2\pi r dr}{\int_{0}^{R_{S}} I(r)2 \pi r dr}$$
+          </div>
+
+          <p>Ultimately, Eqn. 37 still depends on A, and when the angular separation u = &alpha;/&theta;<sub>0</sub> of lens and source is
+ large, finite source effects can be neglected.</p>
+      </section>
+
+    <section>
+      <h1>Further reading</h1>
+      <ul>
+          <li><a href="http://adsabs.harvard.edu/abs/1990A%26A...236..311W">Witt, H.J. (1990), A&A, 236, 311</a></li>
+          <li><a href="http://adsabs.harvard.edu/abs/1994ApJ...430..505W">Witt, H.J. & Mao, S. (1994), ApJ, 430, 505</a></li>
+          <li><a href="http://adsabs.harvard.edu/abs/1998MNRAS.300.1041M">Mao, S. & Witt, H.J. (1998), MNRAS, 300, 104</a></li>
+          <li><a href="http://adsabs.harvard.edu/abs/2011A%26A...529A..75C">Claret, A & Bloemen, S. (2011), A&A, 529, 75</a></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- <script src="node_modules/reveal.js/dist/reveal.js"></script>
+<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script> -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"
+  integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"
+  integrity="sha512-QAU7Ux8iEB53koLKFCtddfFp0D1+uQWoX3ROnRDLeiE98XHOkMciaup0Spc014jQAuJaqz8VjUZdBqriheI4Lg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"
+  integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    hashOneBasedIndex: true,
+
+    width: 1600,
+    height: 900,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight],
+
+    markdown: {
+      gfm: true,
+    },
+
+    slideNumber: 'c/t',
+  });
+</script>
