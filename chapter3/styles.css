@@ -41,8 +41,23 @@ display: grid;
 grid-template-rows: max-content auto;
 }
 
+.slides h1-light {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 2em;
+margin: .67em 0;
+text-align: left;
+width: max-content;
+color: white;
+border-bottom: 3pt solid #fc3d21;
+}
+
 .body-text {
 font-size: 28px;
+}
+
+.body-text-light {
+font-size: 28px;
+color: white;
 }
 
 .center-text {
