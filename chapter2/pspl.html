@@ -245,7 +245,7 @@
 	<div class="row">
 	  <div class="col-sm-9">
 	    <p>Surface brightness is conserved in microlensing: things don't look brighter when you look at them with a magnifying glass.</p>
-	    <p>Then, the ratio of the area of the images to the area of the source is equal to the amount of magnification.</p>
+	    <p>Then, the ratio of the area of the images to the area of the source A<sub>1</sub>, A<sub>2</sub> is equal to the amount of magnification.</p>
 	    
 	    $$A_1 = \frac{\theta_1 \, d\theta_1}{\theta_S \, d\theta_S}, A_2 = \frac{\theta_2 \, d\theta_2}{\theta_S \, d\theta_S}$$
           </div>
@@ -257,14 +257,13 @@
 	      width="100%"
 	      />
           </div>
-	    
-	<p>where theta_1 is the + solution of the quadratic equation, and theta_2 is the - solution of the quadratic equation.</p>
-	<p>Since there are two images, the total magnification will be the sum of the individual magnifications, A = |A_1| + |A_2|.</p>
+	  <p>&theta;<sub>1</sub>, &theta;<sub>2</sub> are the + and - solutions of the lens equation.</p>
+	<p>Since there are two images, the total magnification will be the sum of the individual magnifications, A = |A<sub>1</sub>| + |A<sub>2</sub>|.</p>
       </section>
 
       <section>
         <h2>Connecting the lens equation to magnification</h2>
-	<p>We will skip the math (you can try this for yourself by differentiating the two solutions of the lens equation wrt &theta;<sub>S</sub>), but if you calculate what A_1 and A_2 are, the answer you get is:</p>
+	<p>If you do the math (differentiate the two solutions of the lens equation wrt &theta;<sub>S</sub> to calculate what A<sub>1</sub> and A<sub>2</sub> are), you find the total magnification is:</p>
 	$$A(u) = \frac{u^2+2}{u\sqrt{u^2+4}}$$
 	<p>where u is the distance of the source from the lens in units of the Einstein radius (dimensionless impact parameter)<p/>
 	$$u \equiv \theta_S/\theta_E$$
@@ -272,10 +271,27 @@
 
       <section>
         <h2>Making a microlensing lightcurve</h2>
-	<p>We now have the equation describing how magnification changes with impact parameter, but to make a lightcurve we need to know how the magnification changes with time.
-	  So what we need to know is, how does the impact parameter change with time?</p>
+	<p>A(u) is the equation describing how magnification changes with impact parameter, but to make a lightcurve we need to know how the magnification changes with time.
+	  So how does the impact parameter change with time?</p>
 
-	<p> Schematic here. </p>
+	$$u(t) = \sqrt{u_0^2 + \left( \frac{t - t_0}{t_E} \right)^2}$$
+
+        <div class="row">
+          <div class="col-sm-6">
+            <img
+              src="figures/u.png"
+              alt="Deflection"
+              width="100%"
+              />
+          </div>
+	
+          <div class="col-sm-6">
+	    <ul>
+	    <li> t<sub>E</sub> = Einstein crossing time (time it takes for the source to move the distance of the Einstein radius) </li>
+	    <li> t<sub>0</sub> = time of closest approach </li>
+	    <li> u<sub>0</sub> = impact parameter (distance of closest approach) </li>
+	    </ul>	      
+          </div>
       </section>
 
       <section>
