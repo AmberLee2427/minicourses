@@ -123,9 +123,9 @@
 	$$\theta^2 - \theta \theta_S - \theta_E^2 = 0$$
 	<p>1) Solve the lens equation for theta using the quadratic formula. </p>
 	<p>2) Using the result from 1), evaluate theta in the following limits: </p>
-	<p>a) theta_S = 0 </p>
-	<p>b) theta_S << theta_E </p>
-	<p>c) theta_S >> theta_E </p>
+	<p>a) &theta;<sub>S</sub> = 0 </p>
+	<p>b) &theta;<sub>S</sub> << &theta;<sub>E</sub> </p>
+	<p>c) &theta;<sub>S</sub> >> &theta;<sub>E</sub> </p>
       </section>
 
       <section>
@@ -144,38 +144,127 @@
 	<p>2) Evaluate theta in the following limits: </p>
 	$$a) \quad \theta_S = 0 \implies \theta = \theta_E$$
 	Perfect alignment: an Einstein ring.
+      </section>
+
+      <section>
+        <h2>Solving the lens equation</h2>
+	$$\theta = \frac{\theta_S \pm \sqrt{\theta_S^2 + 4\theta_E^2}}{2}$$
+	
+	<p>2) Evaluate theta in the following limits: </p>
 
 	$$b) \quad \theta_S \ll \theta_E \implies \theta \approx \frac{\theta_S}{2} \pm \theta_E$$	 
 	If your source position is within the Einstein radius but not perfectly aligned with the lens,
 	you will get two images: one inside and one outside the Einstein radius.
+      </section>
+
+      <section>
+        <h2>Solving the lens equation</h2>
+	$$\theta = \frac{\theta_S \pm \sqrt{\theta_S^2 + 4\theta_E^2}}{2}$$
+	
+	<p>2) Evaluate theta in the following limits: </p>
 
 	$$c) \quad \theta_S \gg \theta_E \implies \theta \approx 0, \, \theta_S$$
 	If your source position is much larger than the Einstein radius, you won't have lensing
       </section>
 
+
       <section>
         <h2>Connecting the lens equation to magnification</h2>
-	<p>Given the geometry, qualitatively where would the images be?</p>
+	<p>Suppose you have four sources located in the same plane (colored circles). The lens is the black dot.
+	  The Einstein radius is shown in the dotted line.
+	  Qualitatively, sketch where the images of each source would be located.</p>
+	<div class="row">
+          <div class="col-sm-4">
+            <img
+              src="figures/4source.png"
+              alt="4 source"
+              width="80%"
+              />
+          </div>
       </section>
 
       <section>
         <h2>Connecting the lens equation to magnification</h2>
-	<p>Answer here.</p>
+	<p>Suppose you have four sources located in the same plane (colored circles). The lens is the black dot.
+	  The Einstein radius is shown in the dotted line.
+	  Qualitatively, sketch where the images of each source would be located.</p>
+	<div class="row">
+          <div class="col-sm-4">
+            <img
+              src="figures/4source.png"
+              alt="4 source"
+              width="80%"
+              />
+          </div>
+
+	    <div class="col-sm-4">
+              <img
+		src="figures/4source_sol.png"
+		alt="4 source"
+		width="80%"
+		/>
+            </div>
       </section>
 
+      
       <section>
         <h2>Connecting the lens equation to magnification</h2>
-	<p>Surface brightness is conserved in microlensing: things don't look brighter when you look at them with a magnifying glass.</p>
-	<p>Then, the ratio of the area of the images to the area of the source is equal to the amount of magnification.</p>
-	$$A_1 = \frac{\theta_1 \, d\theta_1}{\theta_S \, d\theta_S}$$
-        $$A_2 = \frac{\theta_2 \, d\theta_2}{\theta_S \, d\theta_S}$$
+	<p>Suppose you have four sources located in the same plane (colored circles). The lens is the black dot.
+	  The Einstein radius is shown in the dotted line.
+	  Qualitatively, sketch where the images of each source would be located.</p>
+	<div class="row">
+          <div class="col-sm-4">
+            <img
+              src="figures/4source.png"
+              alt="4 source"
+              width="80%"
+              />
+          </div>
+
+	    <div class="col-sm-4">
+              <img
+		src="figures/4source_sol.png"
+		alt="4 source"
+		width="80%"
+		/>
+            </div>
+
+	    <div class="col-sm-4">
+              <img
+		src="figures/lens_arc.png"
+		alt="4 source"
+		width="110%"
+		/>
+          </div>
+
+      </section>
+
+      
+      <section>
+        <h2>Connecting the lens equation to magnification</h2>
+	<div class="row">
+	  <div class="col-sm-9">
+	    <p>Surface brightness is conserved in microlensing: things don't look brighter when you look at them with a magnifying glass.</p>
+	    <p>Then, the ratio of the area of the images to the area of the source is equal to the amount of magnification.</p>
+	    
+	    $$A_1 = \frac{\theta_1 \, d\theta_1}{\theta_S \, d\theta_S}, A_2 = \frac{\theta_2 \, d\theta_2}{\theta_S \, d\theta_S}$$
+          </div>
+
+	  <div class="col-sm-3">
+            <img
+	      src="figures/lens_arc.png"
+	      alt="4 source"
+	      width="100%"
+	      />
+          </div>
+	    
 	<p>where theta_1 is the + solution of the quadratic equation, and theta_2 is the - solution of the quadratic equation.</p>
 	<p>Since there are two images, the total magnification will be the sum of the individual magnifications, A = |A_1| + |A_2|.</p>
       </section>
 
       <section>
         <h2>Connecting the lens equation to magnification</h2>
-	<p>We will skip the math (you can try this for yourself by differentiating the two solutions of the lens equation wrt theta_S), but if you calculate what A_1 and A_2 are, the answer you get is:</p>
+	<p>We will skip the math (you can try this for yourself by differentiating the two solutions of the lens equation wrt &theta;<sub>S</sub>), but if you calculate what A_1 and A_2 are, the answer you get is:</p>
 	$$A(u) = \frac{u^2+2}{u\sqrt{u^2+4}}$$
 	<p>where u is the distance of the source from the lens in units of the Einstein radius (dimensionless impact parameter)<p/>
 	$$u \equiv \theta_S/\theta_E$$
