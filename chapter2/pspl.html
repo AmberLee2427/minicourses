@@ -114,19 +114,18 @@
       <section>
         <h2>Goal 1: Make a microlensing lightcurve</h2>
 	<div class="row">
-          <div class="col-sm-7">
-	    <p>Solving the lens equation</p>
-            <p>Connecting the lens equation to magnification</p>
+          <div class="col-sm-6">
+	    <p> - Solving the lens equation</p>
+            <p> - Connecting the lens equation to magnification</p>
+	    <p>Animation: Scott Gaudi (OSU)</p>
           </div>
 
-          <div class="col-sm-5">
+          <div class="col-sm-6">
             <img
               src="figures/animation.gif"
               alt="4 source"
               width="100%"
               />
-	    <p>Animation: Scott Gaudi (OSU)</p>
-
           </div>
       </section>
 
@@ -314,31 +313,57 @@
       <section>
         <h2>Goal 1: Make a microlensing lightcurve</h2>
 	<div class="row">
-          <div class="col-sm-7">
-	    <p>Solving the lens equation</p>
-            <p>Connecting the lens equation to magnification</p>
+          <div class="col-sm-6">
+	    <p> - Solving the lens equation</p>
+            <p> - Connecting the lens equation to magnification</p>
+	    <p>Animation: Scott Gaudi (OSU)</p>
           </div>
 
-          <div class="col-sm-5">
+          <div class="col-sm-6">
             <img
               src="figures/animation.gif"
               alt="4 source"
               width="100%"
               />
-	    <p>Animation: Scott Gaudi (OSU)</p>
-
           </div>
       </section>
       
       <section>
         <h2>Complication: microlensing parallax</h2>
-	<p>Earth orbits around the Sun: it is accelerating!</p>
-	<p>This can cause the otherwise symmetric lightcurve to not be symmetric: it can be a subtle asymmetry (common), or introduce a prominent wiggle on top of the light curve (rare).
-	  This is called microlensing parallax.</p>
-	<p>Note: Trigonometric parallax (often just called parallax) is the change in position of nearby sources relative to distant background stars, due to Earth orbiting the Sun.</p>
-	<p>In Lecture 3 tomorrow, you will learn about more complications!</p>
+	We used this equation to calculate the dimensionless source-lens projected separation:
+	$$u(t) = \sqrt{u_0^2 + \left( \frac{t - t_0}{t_E} \right)^2}$$
+
+	<p>However, this is only accurate if the source and the lens are both moving at constant velocity with respect to the observer.	
+	  If we are observing from Earth, this is not true: Earth is always accelerating since it orbits the Sun!</p>
       </section>
 
+      <section>
+        <h2>Complication: microlensing parallax</h2>
+	<div class="row">
+	  <div class="col-sm-6">
+	    <img
+	      src="figures/microlensing_parallax.png"
+              alt="parallax"
+              width="100%"
+              />
+	    <p>Figure from Wryzykowski et al. 2016</p>
+          </div>
+	  <div class="col-sm-6">
+	    <p>Due to an Earthly observer's accelerating frame, the lightcurve will not be symmetric ("microlensing parallax") </p>
+          </div>
+      </section>
+
+      <section>
+        <h2>Microlensing parallax is not stellar parallax!</h2>
+	<p>Stellar/trigonometric parallax: the apparent change in position of nearby stars relative to distant background stars,
+	  due to Earth orbiting the Sun.</p>
+            <img
+              src="figures/parallax.png"
+              alt="parallax"
+              width="100%"
+              />
+      </section>
+	
       <section>
         <h2>Goal 2: How likely it is to see microlensing?</h2>
 	<p>Microlensing optical depth</p>
@@ -346,34 +371,71 @@
 
       <section>
         <h2>Microlensing optical depth</h2>
-	<p>Definition: the probability that a star will lie within the Einstein radius of a foreground lens.</p>
-	<p>This depends on the source: remember that the Einstein radius depends on the source distance!</p>
-	<p>Important quantity because it tells you about the distribution of mass along a line of sight.</p>
+	<p>Microlensing optical depth is the probability that a star will lie within the Einstein radius of a foreground lens.
+	  It describes the distribution of mass along the line of sight of a particular source.</p>
+	
 	<p>Note: in astronomy, optical depth typically means how transparent a material is to light (high optical depth = opaque, low optical depth = transparent). It has absolutely nothing to do with gravitational lensing.</p>
       </section>
 
       <section>
         <h2>Microlensing optical depth</h2>
-	<p>Figure + equation.</p>
+	<p>&rho;(D<sub>L</sub>) = mass density of lenses</p>
+        <img
+          src="figures/tau1.png"
+          alt="parallax"
+          width="90%"
+          />
       </section>
 
       <section>
-        <h2>Lensing is 1 in a million towards the Bulge</h2>
-	<p>Figure from Paczynski 1991</p>
+        <h2>Microlensing optical depth</h2>
+	<p>&rho;(D<sub>L</sub>) = mass density of lenses</p>
+        <img
+          src="figures/tau2.png"
+          alt="parallax"
+          width="90%"
+          />
+      </section>
+
+      <section>
+        <h2>Microlensing optical depth</h2>
+	<p>&rho;(D<sub>L</sub>) = mass density of lenses</p>
+        <img
+          src="figures/tau3.png"
+          alt="parallax"
+          width="90%"
+          />
+      </section>
+
+
+      <section>
+        <h2>Lensing towards the Bulge: 1 in a million chance</h2>
+	<div class="row">
+          <div class="col-sm-6">
+	    <img
+              src="figures/paczynski91.png"
+              alt="parallax"
+              width="100%"
+              />
+          </div>
+	  <div class="col-sm-6">
+	    <img
+              src="figures/baade.jpg"
+              alt="parallax"
+              width="100%"
+              />
+	    <p>Figure from Paczynski 1991</p>
+          </div>
       </section>
 
     <section>
       <h1>Further reading</h1>
       <p>Update with single lens references</p>
       <ul>
-          <li><a href="http://adsabs.harvard.edu/abs/1996ARA%26A..34..419P">
+	<li><a href='https://ui.adsabs.harvard.edu/abs/1991ApJ...371L..63P/abstract'>
+	    Paczy&nacute;ski, B. (1991)</a></li>
+        <li><a href="http://adsabs.harvard.edu/abs/1996ARA%26A..34..419P">
               Paczy&nacute;ski, B. (1996), Ann. Rev. A&A, 34, 419</a></li>
-          <li><a href="http://adsabs.harvard.edu/abs/1973ApJ...185..747B">
-              Bourassa, R. (1973), ApJ, 185, 747</a></li>
-          <li><a href="http://adsabs.harvard.edu/abs/1992grle.book.....S">
-              Schneider, P. Ehlers, J. & Falco, E. (1992), Gravtitational Lenses, Springer-Verlag</a></li>
-          <li><a href="http://adsabs.harvard.edu/abs/1986A%26A...164..237S">Schneider, P. & Weiss, A. (1986), A&A, 164, 237</a></li>
-
       </ul>
     </section>
   </div>
