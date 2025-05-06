@@ -141,14 +141,40 @@ the lens characteristics and the angular separation between lens and source (&al
 
       <section>
           <h1>Images of the Source</h1>
-          <p>The source-plane coordinate system is taken to be orientated so that &zeta;<sub>0</sub> lies along the &xi;-axis and so is real.</p>
+          <p>The source-plane coordinate system is taken to be orientated so that
+              &zeta;<sub>0</sub> lies along the &xi;-axis and so is real.  This leads to 3
+              catagories of images:</p>
+            <div class="row">
 
-            <p>This leads to 3 catagories of images:<br>
-            If &zeta;<sub>0</sub> &le; r: 2 images merge into a ring at the Einstein radius ("perfect" alignment)<br>
-            If r < &zeta;<sub>0</sub> << 2: 2 images form arcs<br>
-            If &zeta;<sub>0</sub> &ge; 2: 2 images are increasely deformed from circular with proximity to the line of sight.<br>
-            </p>
-      </section>
+                <div class="col-sm image-bottom-caption">
+                  <img
+                    src="figures/lens_perfect_alignment.png"
+                    alt="Lens-plane plot showing perfect alignment"
+                    width="400"
+                  />
+                    <p>If &zeta;<sub>0</sub> &le; r: 2 images merge into a ring at the Einstein radius ("perfect" alignment)</p>
+                </div>
+
+
+                <div class="col-sm image-bottom-caption">
+                  <img
+                    src="figures/lens_close_alignment.png"
+                    alt="Lens-plane plot showing close alignment"
+                    width="400"
+                  />
+                  <p>If r < &zeta;<sub>0</sub> << 2: Two images form arcs</p>
+                </div>
+
+                <div class="col-sm image-bottom-caption">
+                  <img
+                    src="figures/lens_distant_alignment.png"
+                    alt="Lens-plane plot showing distant alignment"
+                    width="400"
+                  />
+                    <p>If &zeta;<sub>0</sub> &ge; 2: 2 images are increasely deformed from circular with proximity to the line of sight.</p>
+                </div>
+            </div>
+        </section>
 
       <section>
           <h2>Finite Source Size and Magnification</h2>
@@ -181,7 +207,7 @@ the lens characteristics and the angular separation between lens and source (&al
       </section>
       <section>
           <h2>General expressions for image magnification</h2>
-            <p>where E,F and &Pi; are the first, second and third elliptic integrals defined by Gradshteyn & Ryzhik (1980) and</p>
+            <p>...where E,F and &Pi; are the first, second and third elliptic integrals defined by Gradshteyn & Ryzhik (1980) and</p>
 
             <div class="cneter-text">
                 $$n = \frac{4\zeta_{0}r}{(\zeta_{0}+r)^{2}},$$
@@ -200,28 +226,35 @@ the lens characteristics and the angular separation between lens and source (&al
       </section>
       <section>
           <h1>Observable Effects</h1>
-          <p>The observable effects of the finite extent of the source are illustrated in Fig. 10. The lightcurve is noticably "rounded-over"
-         at the peak of the event in comparison with the PSPL model, and the amplitude can differ significantly. In practise this prevents
-         real events from achieving the (theoretical) infinite amplification. These effects become significant when &alpha; &asymp; &theta;<sub>0</sub>.
-         This can be a problem while an event is in progress, since any deviation from the PSPL lightcurve has to be regarded as a
-         potential planetary anomaly (ie. a binary lens). As a result, a certain amount of time is spent observing apparently anomalous
-         events which later turn out to be due to single-object-lens.</p>
-
-      </section>
-      <section>
-          <img
-            src="figures/finite_source_lightcurves.png"
-            alt="Lightcurve with finite source effects"
-            width="100%"
-          />
-      </section>
+          <p>The observable effects of the finite extent of the source are illustrated below. </p>
+          <div class="image-and-caption">
+              <img
+                src="figures/sim_finite_source_lcs.png"
+                alt="Finite source effects on lightcurve shape"
+                width="800"
+              />
+                <p>The lightcurve is noticably "rounded-over" at the peak of the event
+                    in comparison with the PSPL model, and the amplitude can differ
+                    significantly.</p>
+            </div>
+          <p>In practise this prevents real events from achieving the (theoretical)
+          infinite amplification.  These effects become significant when &alpha; &asymp; &theta;<sub>0</sub>.</p>
+          </section>
 
       <section>
           <h1>Limb-darkened Finite Sources</h1>
-          <p>The advantage of expressing the lens and amplification equations this way is that it makes it relatively straightforward to
-         introduce one last consideration for a finite source – limb darkening. While the surface brightness of the source is conserved
-         during a microlensing event, most stars don't have a constant brightness profile over the disk.</p>
-
+          <p>The advantage of expressing the lens and amplification equations this way is
+              that it makes it relatively straightforward to introduce one last consideration
+              for a finite source – limb darkening.
+          <div class="image-and-caption">
+              <img
+                src="figures/solar_disk.jpg"
+                alt="Solar disk"
+                width="600"
+              />
+                <p>Most stars don't have a constant brightness profile over the disk;
+                    the intensity drops towards the limb.</p>
+            </div>
       </section>
 
       <section>
