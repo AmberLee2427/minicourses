@@ -259,63 +259,102 @@ the lens characteristics and the angular separation between lens and source (&al
 
       <section>
           <h1>Limb darkening laws</h1>
-          <p>A number of well-established wavelength-dependent limb darkening relationships are available. The higher-order equations
-             generally offer greater accuracy but are not always convenient to use. Published tables present the co-efficients for each
-             relationship as established from observations, allowing us to look-up the appropriate coefficients for the passband of our
-             observations. See papers by Claret et al. These coefficients have historically been denoted by u<sub>&lambda;,1,2</sub>,
-             somewhat confusingly in the microlensing context!
-            </p>
-          <p>Mao & Witt (1998) implemented the limb-darkening law:</p>
+          <p>Mao & Witt (1998) implemented a formulation of limb-darkening law that is widely-used in microlensing:</p>
 
           <div class="center-text">
             $$\frac{I_{\lambda}(r)}{I_{\lambda}(0)} = 1 - u_{\lambda,1} - u_{\lambda,2} + u_{\lambda,1}\sqrt{1 - \frac{R_{S}^{2}}{r^{2}}} + u_{\lambda,2}\left(1 - \frac{R_{S}^{2}}{r^{2}}\right),$$
           </div>
 
-         <p>where I<sub>&lambda;</sub>(r) and I<sub>&lambda;</sub>(0) are the intensity of the stellar disk out to radii of r and at the
-        center, respectively.</p>
+         <p>I<sub>&lambda;</sub>(0) = central intensity, I<sub>&lambda;</sub>(r) = intensity out to radius r.</p>
+
+          <ul>
+              <li>Wavelength- and source stellar properties dependent</li>
+              <li>Several limb-darkening laws in use; not all are convenient for microlensing modeling</li>
+          </ul>
+      </section>
+
+      <section>
+          <h1>Limb darkening Coefficients</h1>
+            <div class="image-and-caption">
+              <img
+                src="figures/limb_darkening_coeff_passband.png"
+                alt="Limb darkening coefficients as a function of filter passband"
+                width="800"
+              />
+                <p>Limb-darkening coefficients appropriate to the passbands used in observations
+                    can be found in published tables e.g. Claret et al. 2011.</br>
+                <a href="https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/A+A/529/A75">Data on Vizier</a></p>
+            </div>
       </section>
 
       <section>
           <h2>Finite source effects with limb darkening</h2>
-          <p>To find an expression for the amplification taking this into account, we break the disk of the star down into infinesimally
-        thin 'shell' layers of radial thickness dr.</p>
-
-         <p>Remembering that the amplification A(r) is the ratio of the image area to that of the unlensed source, we can represent the
-         image area of a lensed source of radius r as:</p>
-
-          <div class="center-text">
-            $${\rm Area}_{\rm image}(r) = A(r)\pi r^{2},$$
-          </div>
-
-            <p>It follows then that for a source of slightly larger radius r+dr, this area is:</p>
-
-          <div class="center-text">
-            $${\rm Area}_{\rm image}(r+dr) = A(r+dr)\pi (r+dr)^{2},$$
-          </div>
-          <p>The image area of the shell, Area<sub>image</sub>(dr), alone is then the difference between these two. The contribution of that
-             shell to the amplification, A<sub>shell</sub>, is given, as always, by the ratio of the shell image area Area<sub>shell</sub>(dr)
-             and the unlensed area of the shell, 2&pi;rdr:
-            </p>
-
+          <p>Whereas a "uniform" model considers all points on the face of the source star to emit the same intensity
+              of light, we now need to apply a limb darkening law when we calculate the intensity.</p>
+          <div class="image-and-caption">
+              <img
+                src="figures/lensed_image_areas.png"
+                alt="Lens plane plot showing lensed image arcs"
+                width="500"
+              />
+              <div>
+                  <p>Remember that magnification A(r) = (total area of lensed images) / (area unlensed source)</p>
+                  <p>We can represent the image area of a lensed source of radius r by integrating the over
+                  the stellar disk while taking limb-darkening into account when computing the intensity.</p>
+                  $${\rm Area}_{\rm image}(r) = A(r)\pi (r+dr)^{2}.$$
+              </div>
+            </div>
+          </section>
+      <section>
+          <h2>Magnification with limb darkening</h2>
+          <p>We subdivide disk of the star into thin 'shell' layers of radial thickness dr.</p>
+          <div class="image-and-caption">
+              <img
+                src="figures/limb_darkening_gradient.png"
+                alt="Limb darkening as a function of radius"
+                width="500"
+              />
+              <div class="center-text">
+                  <p>The image area of each shell that contributes to the lensed images, Area<sub>image</sub>(dr),
+                  can be calculated as:</p>
+                $${\rm Area}_{\rm shell}(r+dr) = A(r+dr)\pi (r+dr)^{2} - A(r)\pi (r)^{2},$$
+                   <p>The contribution of a shell to the magnification is given by the ratio of the shell image area
+              and the unlensed area of the shell, 2&pi;rdr:</p>
+              </div>
+            </div>
           <div class="center-text">
               $$A_{\rm shell} = \frac{Area_{\rm image}(r+dr) - Area_{\rm image}(r)}{2 \pi r dr},$$
-              $$A_{\rm shall} = \frac{1}{2\pi r}{d}{dr}(\pi r^{2}A).$$
           </div>
       </section>
 
       <section>
           <h2>Finite source effects with limb darkening</h2>
-          <p>For each shell at radius r, the product of the area of shell's image and the intensity of the stellar disk at that radius,
-         I(r) give the flux from the shell's image. We then extract the total flux from the images during lensing by integrating over the
-         full radius of the source. The amplification A<sub>limb</sub> is then the ratio of this quantity to the integral of I(r)&times;area
+          <p>Flux from a shell = product of the magnification of a shell (A<sub>shell</sub>) and the intensity of the stellar disk at that radius I(r).</p>
+          <p>Total flux from both images during lensing is obtained by integrating over the
+         full radius of the source. </p>
+          <p>The limb-darkened amplification A<sub>limb</sub> is then the ratio of this quantity to the integral of I(r)&times;area
          over the unlensed disk:</p>
 
           <div class="center-text">
               $$A_{\rm limb} = \frac{\int_{0}^{R_{S}} A_{\rm shell}I(r)2\pi r dr}{\int_{0}^{R_{S}} I(r)2 \pi r dr}$$
           </div>
+        </section>
 
-          <p>Ultimately, Eqn. 37 still depends on A, and when the angular separation u = &alpha;/&theta;<sub>0</sub> of lens and source is
- large, finite source effects can be neglected.</p>
+      <section>
+          <h2>Finite source effects event peaks</h2>
+          <div class="image-and-caption">
+              <img
+                src="figures/sim_finite_source_lcs.png"
+                alt="Finite source effects on lightcurve shape"
+                width="800"
+              />
+                <div class="center-text">
+                    <p>Ultimately, limb-darkened magnification still primarily depends on the angular separation </p>
+                    $$u = {\alpha} / {\theta_{0}},$$
+                   <p>of the lens.  For this reason, finite source effects really matter only around the event peak.</p>
+              </div>
+            </div>
+          <p>This causes the distinctive rounding over of the event lightcurve.</p>
       </section>
 
     <section>
