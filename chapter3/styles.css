@@ -71,7 +71,8 @@ font-size: 28px;
 }
 
 .body-text-light {
-font-size: 28px;
+font-family: "HelveticaNeue-Thin", Helvetica, Arial, sans-serif;
+font-size: 45px;
 color: white;
 }
 
