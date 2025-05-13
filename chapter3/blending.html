@@ -59,9 +59,11 @@
           />
           <div data-markdown>
             <textarea data-template>
-              <p>So far we have assumed that the image of the lensed source is always
-              isolated and the flux from it can always be measured independently from all neighboring stars.</p>
-              <p>But microlensing is most often detected in crowded starfields.</p>
+              <p>Microlensing is an inherently rare phenomenon, so we need to monitor millions of stars
+                in order to detect events.  <p>
+                <p>&#8594; Monitor densely populated regions of the sky, e.g. the
+                Galactic Bulge.  </p>
+                <p>So microlensing is most often detected in crowded starfields.</p>
               <br>
               <p><small>The field of OGLE-2012-BLG-0406 (centered)<br>
             </textarea>
@@ -99,21 +101,20 @@
     <section>
       <h1>Measuring Flux</h1>
       <p>Blending results in light from the neighbors contaminating the flux of the
-        lensed star, f<sub>s</sub>, measured at time t. </p>
+        lensed star, f<sub>&lambda;,s</sub>, measured at time t. </p>
       <div class="row">
         <div class="col-sm">
-          For an isolated lensed star, the measured flux f(t) is given by:</p>
-$$f(t) = f_{s}(t)A(u(t))$$
+          For an isolated lensed star, the measured flux f<sub>&lambda;</sub>(t) is given by:</p>
+$$f_{\lambda}(t) = f_{\lambda,s}(t)A(u(t))$$
         </div>
         <div class="col-sm">
           In practise what we actually measure is:</p>
-$$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
+$$f_{\lambda}(t) = f_{\lambda, s}(t)A(u(t)) + f_{\lambda, b}(t)$$
         </div>
       </div>
 <p class="body-text">where A(u(t)) is the magnification at angular separation u, and
   f<sub>b</sub>(t) is the additional flux from all overlapping neighbors. </p>
-      <p>This is strongly time-dependant: for instance, if the seeing suddenly worsens
-        during observations, the stellar PSFs expand radially and f<sub>b</sub> abruptly increases.</p>
+      <p>This is strongly time and wavelength dependent.</p>
     </section>
 
     <section>
@@ -146,8 +147,9 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
     <section>
       <h1>Dealing with Blending</h1>
     <div class="row">
-        <p>Contemporaneous sets of observations from different telescopes and
-              instruments can help here. </p>
+        <p>We need observations at a range of different magnifications</p>
+        </div>
+        <div class="row">
         <div class="col-sm">
             <div class="row">
                 <div class="col-sm">
@@ -170,11 +172,10 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
                 on 2024/10/12</small>
           </div>
           <div class="col-sm">
-              <p>Each dataset has a different combination of telescope aperture, instrument
-              resolution and seeing conditions, as in these examples, so f<sub>s</sub> and
-              f<sub>b</sub> will vary independently for each dataset.  </p>
-              <p>So we consider both as functions of time for each dataset, <em>k</em> (with
-              N<sub>k</sub> datapoints), in turn:</p>
+              <p>By measuring the total flux as a function of time, we can find the best-fit
+                  model for A(u(t)) that includes both source and blend fluxes. </p>
+              <p>f<sub>s</sub> and f<sub>b</sub> will vary independently as functions of time
+                  for each dataset, k (with N<sub>k</sub> datapoints).  </p>
               <p>$$f_{k}(t) = f_{s,k}(t)A(u(t)) + f_{b,k}$$</p>
           </div>
         </div>
@@ -230,8 +231,7 @@ $$f(t) = f_{s}(t)A(u(t)) + f_{b}(t)$$
 
     <section>
       <h1>Stellar variability</h1>
-      <p>So far we have assumed that the blended neighbors to the lensed star give
-        constant flux over the duration of the lensing event.  If one or more neighboring
+      <p>If one or more neighboring
           stars has intrinsic variability, f<sub>b</sub> may also vary with time and
           wavelength.  </p>
         <div class="row">
