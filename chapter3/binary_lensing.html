@@ -94,6 +94,8 @@
               <div class="col-sm-6">
                 <p>The source plane coordinate system, (u,&nu;), has its origin at the
                     point where the optical axis intersects the source plane.</p>
+                  <p>The optical axis is the line from the observer through the mid-point
+                  between the lens masses, so the coordinate system is lens-centric.</p>
               </div>
       </section>
 
@@ -169,7 +171,7 @@
                 <p>This represents a mapping between the source and lens planes: </p>
               <p>A lightray from point w&#772;(u,&nu;) in the source plane will hit the lens
                   plane at z&#772;(x,y). </p>
-              <p>But we are most interested in the inverse problem - extracting the locations of the
+              <p>But we are most interested in extracting the locations of the
                   source images in the lens plane geometry.</p>
               </div>
           </div>
@@ -177,10 +179,8 @@
 
       <section>
           <h2>Locating the source images in the lens plane</h2>
-              This requires complex root-finding
-              techniques explored in detail by Schneider & Weiss (1986). </p>
-          <p>In complex notation, the binary lens equation can be written: </p>
-
+          <p>As before, solving the binary lens equation gives us the location of the source images. </p>
+          <p>To achieve this, its convenient to write the lens equation in complex notation</p>
             <table width="75%">
                 <tr>
                     <td>$$w = z - m_{1}\frac{1}{\bar{z} - \bar{z_{1}}} - m_{2}\frac{1}{\bar{z} - \bar{z_{2}}},$$</td>
@@ -191,12 +191,13 @@
 
             <p>where w, z are complex numbers and z&#772; is the complex conjugate of z.</p>
 
+          <p>Solving this equation requires complex root-finding
+              techniques explored in detail by Schneider & Weiss (1986). </p>
       </section>
 
       <section>
           <h1>Source Images</h1>
-          <p>The number of solutions to the lens equation tells us the number of images of the source
-          that will be produced.</p>
+          <p>Number of real solutions = number of images of the source</p>
           <p>To find the number and locations of the source images produced we need to
               produce an expression for z in terms of w - the inverse of the lens
               equation. The complex conjugate of the binary lens equation is:</p>
@@ -206,7 +207,7 @@
 
       <section>
           <h1>Source Images</h1>
-          <p>Solving this expression for z&#772; and substituting, we get:</p>
+          <p>Solving this expression for z&#772; and substituting, we get (for a binary lens):</p>
 
         $$z = w + \sum_{i=1,2}m_{i}\left[\bar{w} - \bar{z_{i}} + \sum_{k=1,2}m_{k}(z - z_{k})^{-1}\right]^{-1}$$
 
@@ -218,19 +219,23 @@
 
       <section>
           <h1>Source Images - key takeaways</h1>
-          <ol>
-              <li>The number of images scales with the number of lenses, so:</li>
-              <ul>
-                  <li>Single lens &#8594; Up to 2 images</li>
-                  <li>Binary lens &#8594; Up to 5 images</li>
-                  <li>Triple lens &#8594; Up to 10 images and so on...</li>
-              </ul>
-              <li>Not all solutions are real meaning not all images exist for a given lens(es)/source configuration</li>
-              <li>Since the lens-source projected separation changes over time, so does the number and location of the images.</li>
-          </ol>
+          <div class="image-and-caption">
+              <video width="90%" controls>
+                      <source src="figures/binary_lens_plane_no_caustics.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <div class="center-text">
+                    <ol>
+                      <li>Number of images scales with the number of lenses</li>
+                      <li>Not all solutions are real &#8594; not all images exist all the time</li>
+                      <li>Number and location of images changes with the lens-source projected separation </li>
+                  </ol>
+                </div>
+            </div>
       </section>
+
       <section>
-          <h2>Amplification for a binary lens</h2>
+          <h2>Magnification for a binary lens</h2>
           <p>Recall that magnification is the ratio of the lensed/unlensed total image area.</p>
           <div class="row">
               <div class="col sm center-text">
@@ -245,6 +250,7 @@
           <p>I.e. we calculate the inverse of the area distortion of the lens mapping.</p>
       </section>
 
+      <!--
       <section>
           <h2>Amplification for a binary lens</h2>
           <p>To derive an expression for this we need the 'gradient' of a vector function, or
@@ -253,7 +259,6 @@
                 <table width="75%">
                     <tr>
                         <td>$$J = \begin{bmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ \frac{\partial \nu}{\partial x} & \frac{\partial \nu}{\partial y} \end{bmatrix}$$</td>
-                        <td>$$J = \left| \frac{\partial w}{\partial z} \right|^{2} - \left|\frac{\partial w}{\partial z}\right|^{2},$$</td>
                     </tr>
                 </table>
       </section>
@@ -277,12 +282,17 @@
             </tr>
         </table>
       </section>
+      -->
 
       <section>
-        <h2>Amplification for a binary lens</h2>
-          <p>The total amplification is given by the sum of the absolute amplification of each image i:</p>
+        <h2>Magnification for a binary lens</h2>
+          <p>The total amplification is given by the sum of the magnification of each image i:</p>
 
-            $$A = \sum_{i=1}^{n}A_{i} = \sum_{i=1}^{n}|\det J|^{-1}.$$
+            $$A = \sum_{i=1}^{n}A_{i} = \sum_{i=1}^{n}|\det J|^{-1},$$
+
+          <p>where J is the Jacobian matrix:</p>
+
+          $$J = \begin{bmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\ \frac{\partial \nu}{\partial x} & \frac{\partial \nu}{\partial y} \end{bmatrix}$$
       </section>
 
       <section>
@@ -345,7 +355,7 @@
               <div class="col-sm">
                 <ul>
                     <li>Outside the caustic: 3 images (1 outside and 2 inside the critical curve)</li>
-                    <li>2 images exist within the caustic region (1 outside and 1 inside the critical curve</li>
+                    <li>2 images exist within the caustic region (1 outside and 1 inside)</li>
                     <li>Caustic curve = maximum magnifcation; inside it the magnification can drop</li>
                 </ul>
               </div>
