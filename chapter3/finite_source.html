@@ -92,6 +92,21 @@ the lens characteristics and the angular separation between lens and source (&al
       </section>
 
       <section>
+          <h1>Sources of Finite Extent</h1>
+            Within these reference frames, we need a way to represent the finite disk of the source star.
+          <div class="image-and-caption">
+              <img
+                src="figures/limb_darkening_gradient.png"
+                alt="Source star with finite radius r"
+                width="750"
+              />
+              <div>
+                  <p>This needs to represent the radial brightness profile of the star.</p>
+             </div>
+          </div>
+      </section>
+
+      <section>
           <h1>The Lens Equation (again)</h1>
           <p>Here we introduce complex notation in order to parameterize the lens equation.</p>
           <p>This provides a more natural formulation for two-dimensional vectors. Much of
@@ -148,13 +163,12 @@ the lens characteristics and the angular separation between lens and source (&al
 
                 <div class="col-sm image-bottom-caption">
                   <img
-                    src="figures/lens_perfect_alignment.png"
-                    alt="Lens-plane plot showing perfect alignment"
+                    src="figures/lens_distant_alignment.png"
+                    alt="Lens-plane plot showing distant alignment"
                     width="400"
                   />
-                    <p>If &zeta;<sub>0</sub> &le; r: 2 images merge into a ring at the Einstein radius ("perfect" alignment)</p>
+                    <p>If &zeta;<sub>0</sub> &ge; 2: 2 images are increasely deformed from circular with proximity to the line of sight.</p>
                 </div>
-
 
                 <div class="col-sm image-bottom-caption">
                   <img
@@ -167,33 +181,36 @@ the lens characteristics and the angular separation between lens and source (&al
 
                 <div class="col-sm image-bottom-caption">
                   <img
-                    src="figures/lens_distant_alignment.png"
-                    alt="Lens-plane plot showing distant alignment"
+                    src="figures/lens_perfect_alignment.png"
+                    alt="Lens-plane plot showing perfect alignment"
                     width="400"
                   />
-                    <p>If &zeta;<sub>0</sub> &ge; 2: 2 images are increasely deformed from circular with proximity to the line of sight.</p>
+                    <p>If &zeta;<sub>0</sub> &le; r: 2 images merge into a ring at the Einstein radius ("perfect" alignment)</p>
                 </div>
+
             </div>
         </section>
 
       <section>
           <h2>Finite Source Size and Magnification</h2>
-
-        <p>Since surface brightness is conserved, the magnification is given by the ratio of the combined image area to that of
-        the source. In complex notation this is given by:</p>
-
+        <p>Since surface brightness is conserved, the magnification (A<sub>tot</sub>) is given
+            by the ratio of the combined image area to that of the unlensed source.</p>
+          <p>In complex notation the areas of both images is given by:</p>
           <div class="center-text">
             $$A_{1,2} = \frac{1}{2\pi r^{2}} \int_{0}^{2\pi} y(\phi) \frac{dx(\phi)}{d\phi},$$
           </div>
-        <p>where</p>
+      </section>
 
+      <section>
+          <h2>Finite Source Size and Magnification</h2>
+          <p>In these expressions: </p>
         <div class="center-text">
-            $$x(\phi) = \frac{\zeta_{0} + r\cos\phi}{2}f_{1,2}(\phi),
-            y(\phi) = \frac{r\sin\phi}{2}f_{1,2}(\phi),$$
+            $$x(\phi) = \frac{\zeta_{0} + r\cos\phi}{2}f_{1,2}(\phi),$$
+            $$y(\phi) = \frac{r\sin\phi}{2}f_{1,2}(\phi),$$
             $$f_{1,2}(\phi) = 1 \pm \sqrt{1 + \frac{4}{\zeta_{0}^{2} + r^{2} + 2\zeta_{0}r\cos\phi}}$$
          </div>
       </section>
-
+      <!--
       <section>
           <h2>General expressions for image magnification</h2>
             <p>Witt & Mao 1994 derived general expressions for the image magnification
@@ -209,16 +226,18 @@ the lens characteristics and the angular separation between lens and source (&al
           <h2>General expressions for image magnification</h2>
             <p>...where E,F and &Pi; are the first, second and third elliptic integrals defined by Gradshteyn & Ryzhik (1980) and</p>
 
-            <div class="cneter-text">
+            <div class="center-text">
                 $$n = \frac{4\zeta_{0}r}{(\zeta_{0}+r)^{2}},$$
                 $$k = \sqrt{\frac{4n}{4+(\zeta_{0}-r)^{2}}}$$
             </div>
       </section>
+      -->
+
       <section>
           <h2>Small sources</h2>
-          <p>However, in the case where the source can be considered to be small (r &rarr; 0) but the alignment is not perfect
-             (&zeta;<sub>0</sub>  &ne; 0), we recover the familiar amplification equation for a point source by summing the contributions from
-             A<sub>1,2</sub>:</p>
+          <p>In the case where the source can be considered to be small (r &rarr; 0) but the alignment is not perfect
+             (&zeta;<sub>0</sub>  &ne; 0), we recover the familiar magnification (A<sub>tot</sub>) equation for a point
+              source by summing the contributions from A<sub>1,2</sub> as a ratio of the unlensed area of the source:</p>
 
             <div class="center-text">
                 $$A_{tot} = \frac{2+\zeta_{0}^{2}}{\zeta_{0}\sqrt{4+\zeta_{0}^{2}}}.$$
@@ -298,10 +317,12 @@ the lens characteristics and the angular separation between lens and source (&al
                 width="500"
               />
               <div>
-                  <p>Remember that magnification A(r) = (total area of lensed images) / (area unlensed source)</p>
+                  <p>Remember that magnification A(r):</p>
+                      $$A(r) = \frac{\Sigma(\text{Area lensed images})}{\text{Area unlensed source}},$$
+                  <p>Equivalently:</p>
+                    $$\Sigma(\text{Area lensed images}) = A(r) \pi r^{2}.$$
                   <p>We can represent the image area of a lensed source of radius r by integrating the over
                   the stellar disk while taking limb-darkening into account when computing the intensity.</p>
-                  $${\rm Area}_{\rm image}(r) = A(r)\pi (r+dr)^{2}.$$
               </div>
             </div>
           </section>
@@ -318,7 +339,8 @@ the lens characteristics and the angular separation between lens and source (&al
                   <p>The image area of each shell that contributes to the lensed images, Area<sub>image</sub>(dr),
                   can be calculated as:</p>
                 $${\rm Area}_{\rm shell}(r+dr) = A(r+dr)\pi (r+dr)^{2} - A(r)\pi (r)^{2},$$
-                   <p>The contribution of a shell to the magnification is given by the ratio of the shell image area
+                   <p>The contribution of a shell to the magnification (A<sub>shell</sub>) is given by the
+                       ratio of the shell image area
               and the unlensed area of the shell, 2&pi;rdr:</p>
               </div>
             </div>
@@ -329,7 +351,8 @@ the lens characteristics and the angular separation between lens and source (&al
 
       <section>
           <h2>Finite source effects with limb darkening</h2>
-          <p>Flux from a shell = product of the magnification of a shell (A<sub>shell</sub>) and the intensity of the stellar disk at that radius I(r).</p>
+          <p>Flux from a shell is the product of A<sub>shell</sub> and the intensity of the stellar
+              disk at that radius I(r).</p>
           <p>Total flux from both images during lensing is obtained by integrating over the
          full radius of the source. </p>
           <p>The limb-darkened amplification A<sub>limb</sub> is then the ratio of this quantity to the integral of I(r)&times;area
@@ -354,7 +377,6 @@ the lens characteristics and the angular separation between lens and source (&al
                    <p>of the lens.  For this reason, finite source effects really matter only around the event peak.</p>
               </div>
             </div>
-          <p>This causes the distinctive rounding over of the event lightcurve.</p>
       </section>
 
     <section>
