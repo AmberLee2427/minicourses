@@ -14,6 +14,20 @@
   color: var(--rges-light-purple);
 }
 
+.slide-nav-bar {
+        background-image: linear-gradient(to right, var(--rges-light-purple), black);
+        position: absolute;
+        top: 10;
+        width: 100%;
+        z-index: 1;
+    }
+
+.slide-nav-bar a {
+    color: white;
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .title-slide {
   color: white;
   data-background-image: url("figures/roman_milkyway_bckgd.png");
@@ -71,7 +85,8 @@ font-size: 28px;
 }
 
 .body-text-light {
-font-size: 28px;
+font-family: "HelveticaNeue-Thin", Helvetica, Arial, sans-serif;
+font-size: 45px;
 color: white;
 }
 
