@@ -1,4 +1,10 @@
-# Microlensing Mini Course (2025)
+<p align="center">
+  <a href="https://github.com/AmberLee2427/microlens-submit">
+    <img src="./assets/rges-pit_logo.png" alt="logo" width="300"/>
+  </a>
+</p>
+
+<h1 align="center"> Microlensing Mini Course (2025) </h1>
 
 Welcome to the repository for the **Microlensing Mini Course**, developed by the [Roman Galactic Exoplanet Surveyor Preparatory Investigations Team (RGES-PIT)](https://rges-pit.org/). This minicourse is designed for select students to participate in Roman Space Telescope-related lectures and activities, with a focus on gravitational microlensing science. The virtual lectures were held in May 2025, and all materials are available here and on the [course landing page](https://rges-pit.org/outreach_mini_landing/).
 
