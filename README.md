@@ -44,7 +44,7 @@ You can run the Jupyter notebooks in two ways:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/minicourses.git
+   git clone https://github.com/rges-pit/minicourses.git
    cd minicourses
    ```
 2. (Recommended) Create a virtual environment:
